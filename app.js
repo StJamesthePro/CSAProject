@@ -11,7 +11,6 @@ var usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const basketsRouter = require("./routes/baskets");
 const itemsRouter = require("./routes/items");
-const usersRouter = require("./routes/users");
 const ordersRouter = require("./routes/orders");
 
 var app = express();
