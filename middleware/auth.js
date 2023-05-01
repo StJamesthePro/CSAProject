@@ -1,23 +1,20 @@
-const passport = require("passport");
-const { authenticate } = require("../middlewares/auth");
+const passport = require('passport');
 
 function authenticate(req, res, next) {
-    passport.authenticate("local", (error, user) => {
+    passport.authenticate('local', (error, user) => {
         if (error) {
             return next(error);
         }
 
         if (!user) {
-            return res
-                .status(401)
-                .json({ message: "Incorrect username or password." });
+            return res.status(401).json({ message: 'Incorrect username or password.' })
         }
 
         req.logIn(user, (error) => {
             if (error) {
                 return next(error);
             }
-            next();
+            next()
         });
     })(req, res, next);
 }
