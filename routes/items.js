@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Basket, BasketItem, Item } = require("../models");
-const { authenticate } = require("../middlewares/auth");
+const { authenticate } = require("../middleware/auth");
 
 // Create a new basket
 router.post("/", authenticate, async (req, res) => {
